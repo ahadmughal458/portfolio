@@ -1336,7 +1336,28 @@
                     </div>
                 </div>
             </div>
-
+            <script>
+                const scriptURL = "https://script.google.com/macros/s/AKfycbyTe9Z1ts7GJP080D5Kr0mGSeJxsdqheZy7RlqYYly7H8JzlJCRwDTSSV6ajzNM7RiL/exec";
+                
+                document.getElementById("contactForm").addEventListener("submit", function(e) {
+                    e.preventDefault();
+                
+                    const formData = new FormData(this);
+                
+                    fetch(scriptURL, {
+                        method: "POST",
+                        body: formData
+                    })
+                    .then(() => {
+                        alert("Message sent successfully!");
+                        document.getElementById("contactForm").reset();
+                    })
+                    .catch(error => {
+                        alert("Error sending message");
+                        console.error(error);
+                    });
+                });
+            </script>
            <form class="contact-form" id="contactForm">
                 <div class="form-group">
                     <input type="text" name="name" placeholder="Your Name" required>
@@ -1466,30 +1487,5 @@
         const year = new Date().getFullYear();
         document.querySelector('.footer-text').innerHTML = `© ${year} Code Creatify Software House. All rights reserved. | Where Code Meets Creativity`;
     </script>
-
-    <script>
-const scriptURL = "https://script.google.com/macros/s/AKfycbyTe9Z1ts7GJP080D5Kr0mGSeJxsdqheZy7RlqYYly7H8JzlJCRwDTSSV6ajzNM7RiL/exec";
-
-document.getElementById("contactForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    const formData = new FormData(this);
-    const data = Object.fromEntries(formData.entries());
-
-    fetch(scriptURL, {
-        method: "POST",
-        body: JSON.stringify(data)
-    })
-    .then(response => response.json())
-    .then(data => {
-        alert("Message sent successfully!");
-        document.getElementById("contactForm").reset();
-    })
-    .catch(error => {
-        alert("Error sending message");
-        console.error(error);
-    });
-});
-</script>
 </body>
 </html>
