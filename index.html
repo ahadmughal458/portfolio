@@ -1336,27 +1336,27 @@
                     </div>
                 </div>
             </div>
-            <script>
-                const scriptURL = "https://script.google.com/macros/s/AKfycbyTe9Z1ts7GJP080D5Kr0mGSeJxsdqheZy7RlqYYly7H8JzlJCRwDTSSV6ajzNM7RiL/exec";
-                
-                document.getElementById("contactForm").addEventListener("submit", function(e) {
-                    e.preventDefault();
-                
-                    const formData = new FormData(this);
-                
-                    fetch(scriptURL, {
-                        method: "POST",
-                        body: formData
-                    })
-                    .then(() => {
-                        alert("Message sent successfully!");
-                        document.getElementById("contactForm").reset();
-                    })
-                    .catch(error => {
-                        alert("Error sending message");
-                        console.error(error);
-                    });
-                });
+          <script>
+            const scriptURL = "https://script.google.com/macros/s/AKfycbw_6A3DnLxPFWxVP9D6yOjxTc4Aushp3xR5l4YcVPej-hoAGew3DyMyblrhZJ2mQazK/exec";
+            
+            document.getElementById("contactForm").addEventListener("submit", function(e) {
+              e.preventDefault();
+            
+              const formData = new FormData(this);
+            
+              fetch(scriptURL, {
+                method: "POST",
+                body: formData
+              })
+              .then(() => {
+                alert("Message sent successfully!");
+                this.reset();
+              })
+              .catch(error => {
+                alert("Error sending message");
+                console.error(error);
+              });
+            });
             </script>
            <form class="contact-form" id="contactForm">
                 <div class="form-group">
