@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Abdul Aahad · Shopify Developer & Frontend Expert</title>
+  <!-- Google Fonts + Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #0a0c10;
+      font-family: 'Inter', sans-serif;
+      color: #eef5ff;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* glows & glass */
+    .glass-card {
+      background: rgba(18, 22, 30, 0.7);
+      backdrop-filter: blur(12px);
+      border-radius: 32px;
+      border: 1px solid rgba(0, 255, 255, 0.15);
+      transition: 0.25s ease;
+    }
+
+    .neon-text {
+      background: linear-gradient(135deg, #aaffff, #2b9eff);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(0, 255, 255, 0.05);
+      border: 1px solid #2dd4bf;
+      padding: 12px 28px;
+      border-radius: 40px;
+      font-weight: 600;
+      color: #ccf4ff;
+      transition: 0.2s;
+      text-decoration: none;
+      backdrop-filter: blur(4px);
+    }
+
+    .btn:hover {
+      background: #0ff1;
+      border-color: #0ff;
+      box-shadow: 0 0 12px #0ff3;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    /* project grid */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 28px;
+      margin-top: 32px;
+    }
+
+    .project-card {
+      background: #12161f;
+      border-radius: 28px;
+      padding: 1.4rem;
+      border: 1px solid #2a2f3f;
+      transition: 0.2s all;
+      display: flex;
+      flex-direction: column;
+      backdrop-filter: blur(2px);
+    }
+
+    .project-card:hover {
+      border-color: #2dd4bf;
+      transform: translateY(-6px);
+      box-shadow: 0 18px 30px -12px #00000080;
+    }
+
+    .project-icon {
+      font-size: 2.2rem;
+      color: #2dd4bf;
+      margin-bottom: 16px;
+    }
+
+    .project-title {
+      font-weight: 700;
+      font-size: 1.4rem;
+      letter-spacing: -0.3px;
+    }
+
+    .project-links {
+      margin-top: 20px;
+      display: flex;
+      gap: 16px;
+    }
+
+    .project-links a {
+      color: #9aa9c1;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: 0.2s;
+    }
+
+    .project-links a i {
+      margin-right: 6px;
+    }
+
+    .project-links a:hover {
+      color: #2dd4bf;
+    }
+
+    /* skill tag */
+    .skill-tag {
+      background: #1e2433;
+      padding: 5px 14px;
+      border-radius: 60px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #b9e6ff;
+      border-left: 2px solid #2dd4bf;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 48px 0 24px 0;
+      border-left: 5px solid #2dd4bf;
+      padding-left: 20px;
+    }
+
+    .hero {
+      padding: 70px 0 30px;
+    }
+
+    .badge-stat {
+      background: #00000040;
+      border-radius: 100px;
+      padding: 4px 16px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      width: fit-content;
+      border: 0.5px solid #2dd4bf40;
+    }
+
+    footer {
+      margin-top: 80px;
+      padding: 30px 0 40px;
+      text-align: center;
+      border-top: 1px solid #1e2a3a;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Hero Section -->
+    <div class="hero">
+      <div class="badge-stat">
+        <i class="fas fa-code"></i> 3+ years · Shopify custom theme dev
+      </div>
+      <h1 style="font-size: 4rem; font-weight: 800; margin: 20px 0 12px;">Abdul Aahad <span style="color:#2dd4bf;">✦</span></h1>
+      <p style="font-size: 1.6rem; font-weight: 500; color: #cbd5e6;">Web Developer · Shopify Expert · UI/UX focused</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 14px; margin: 30px 0 16px;">
+        <span class="skill-tag"><i class="fab fa-html5"></i> HTML5</span>
+        <span class="skill-tag"><i class="fab fa-css3-alt"></i> CSS3</span>
+        <span class="skill-tag"><i class="fab fa-js"></i> JavaScript</span>
+        <span class="skill-tag"><i class="fab fa-shopify"></i> Liquid</span>
+        <span class="skill-tag"><i class="fab fa-python"></i> Python (Basic)</span>
+        <span class="skill-tag"><i class="fas fa-mobile-alt"></i> Responsive Expert</span>
+      </div>
+      <p style="max-width: 680px; font-size: 1.05rem; color: #b0c4de; margin-top: 12px;">
+        I build high‑conversion, responsive Shopify stores and custom frontend experiences. 
+        Onsite Shopify Theme Developer with 3+ years freelance & agency projects. 
+        I turn designs into pixel‑perfect, blazing‑fast e‑commerce stores.
+      </p>
+      <div style="display: flex; gap: 18px; flex-wrap: wrap; margin-top: 32px;">
+        <a href="https://github.com/ahadmughal458" target="_blank" class="btn"><i class="fab fa-github"></i> GitHub</a>
+        <a href="https://www.fiverr.com/s/BR4QEdb" target="_blank" class="btn"><i class="fas fa-star"></i> Fiverr</a>
+        <a href="mailto:ahadmughal458@gmail.com" class="btn"><i class="far fa-envelope"></i> Email me</a>
+      </div>
+    </div>
+
+    <!-- Live Projects (e‑commerce stores) -->
+    <div>
+      <div class="section-title">
+        <i class="fas fa-store"></i> Live stores & custom work
+      </div>
+      <div class="project-grid">
+        <!-- each store from the list -->
+        <div class="project-card"><div class="project-icon"><i class="fas fa-crown"></i></div><div class="project-title">Comodo Living</div><div style="margin: 10px 0; color:#9aa9c1;">Shopify custom theme, responsive UI, product filtering</div><div class="project-links"><a href="https://www.comodoliving.co.uk/" target="_blank"><i class="fas fa-external-link-alt"></i> Live demo</a></div></div>
+        <div class="project-card"><div class="project-icon"><i class="fas fa-leaf"></i></div><div class="project-title">Anboise</div><div>Elegant skincare store • Liquid modifications • cart drawer</div><div class="project-links"><a href="https://www.anboise.com/" target="_blank"><i class="fas fa-external-link-alt"></i> Visit site</a></div></div>
+        <div class="project-card"><div class="project-icon"><i class="fas fa-snowboarding"></i></div><div class="project-title">Alyaskin</div><div>Beauty niche, fully responsive + AJAX add to cart</div><div class="project-links"><a href="https://alyaskin.com.au/" target="_blank"><i class="fas fa-external-link-alt"></i> View</a></div></div>
+        <div class="project-card"><div class="project-icon"><i class="fas fa-shopping-cart"></i></div><div class="project-title">MyTrolley.pk</div><div>Pakistan grocery delivery – custom sections & speed opt.</div><div class="project-links"><a href="https://mytrolley.pk/" target="_blank"><i class="fas fa-external-link-alt"></i> Check</a></div></div>
+        <div class="project-card"><div class="project-icon"><i class="fas fa-gem"></i></div><div class="project-title">Amethyst Store</div><div>Jewelry brand, smooth animations, SEO friendly</div><div class="project-links"><a href="https://www.theamethyststore.com/" target="_blank"><i class="fas fa-external-link-alt"></i> Live</a></div></div>
+        <div class="project-card"><div class="project-icon"><i class="fas fa-bed"></i></div><div class="project-title">Snoozy Labs</div><div>Sleep products – mega menu, custom PDP tabs</div><div class="project-links"><a href="https://snoozylabs.com/" target="_blank"><i class="fas fa-external-link-alt"></i> Explore</a></div></div>
+        <div class="project-card"><div class="project-icon"><i class="fas fa-globe-europe"></i></div><div class="project-title">da‑meso.de</div><div>German brand, multi‑language support & speed optimization</div><div class="project-links"><a href="https://da-meso.de/" target="_blank"><i class="fas fa-external-link-alt"></i> See project</a></div></div>
+        <div class="project-card"><div class="project-icon"><i class="fas fa-palette"></i></div><div class="project-title">My Beauty Pantry</div><div>Natural cosmetics, dynamic product bundles</div><div class="project-links"><a href="https://mybeautypantry.com.au/" target="_blank"><i class="fas fa-external-link-alt"></i> Visit</a></div></div>
+        <div class="project-card"><div class="project-icon"><i class="fas fa-oven"></i></div><div class="project-title">Ovenly Baked</div><div>Bakery store – custom theme & checkout styling</div><div class="project-links"><a href="https://ovenlybaked.com/" target="_blank"><i class="fas fa-external-link-alt"></i> Preview</a></div></div>
+      </div>
+    </div>
+
+    <!-- GitHub Contribution + Experience deep -->
+    <div style="display: flex; flex-wrap: wrap; gap: 30px; margin-top: 40px; justify-content: space-between;">
+      <div class="glass-card" style="flex: 1.5; padding: 28px; border-radius: 28px;">
+        <h3 style="font-size: 1.8rem; display: flex; gap: 14px;"><i class="fab fa-github"></i> GitHub pulse</h3>
+        <p style="margin-top: 12px;"><strong>ahadmughal458</strong> · 7 repos · 76+ contributions (last year)</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0;">
+          <span class="skill-tag"><i class="fas fa-trophy"></i> Pull Shark</span>
+          <span class="skill-tag"><i class="fas fa-bolt"></i> Quickdraw</span>
+        </div>
+        <p>Featured repos: <strong>portfolio</strong> (HTML), <strong>my-crm</strong>, <strong>Matrix‑Chat‑Project</strong> – full‑stack experiments.</p>
+        <a href="https://github.com/ahadmughal458" style="margin-top: 20px; display: inline-block;" class="btn"><i class="fab fa-github"></i> see all activity</a>
+      </div>
+      <div class="glass-card" style="flex: 1; padding: 28px; border-radius: 28px;">
+        <h3><i class="fas fa-briefcase"></i> Onsite & freelance</h3>
+        <ul style="margin-top: 15px; list-style: none;">
+          <li style="margin-bottom: 15px;">✔ <strong>Shopify custom theme dev</strong> – from scratch & theme customization</li>
+          <li style="margin-bottom: 15px;">✔ <strong>Frontend expert</strong> – responsive & interactive UIs (HTML/CSS/JS)</li>
+          <li style="margin-bottom: 15px;">✔ <strong>Liquid & Shopify 2.0</strong> – metafields, app integrations, checkout</li>
+          <li>✔ <strong>Performance & SEO</strong> – 90+ lighthouse scores for e‑commerce</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- extra unique creative area: CLI-like intro -->
+    <div style="margin-top: 64px; background: #05080f; border-radius: 36px; padding: 28px; border: 1px solid #1e2f3f; font-family: monospace;">
+      <p style="color: #2dd4bf;">$ whoami</p>
+      <p style="font-size: 1.2rem;">Abdul Aahad > Shopify Partner & Creative Developer. “Pixel perfect, fluid experiences.”</p>
+      <p style="margin-top: 12px; color: #8d9fcf;">$ skills --proven</p>
+      <p>→ Liquid, JS, CSS Grid/Flex, Figma to HTML, theme customization, version control (Git).</p>
+      <p style="margin-top: 12px; color: #2dd4bf;">$ projects --live | wc -l</p>
+      <p>▸ 9+ production stores launched for international brands (UK, Australia, Germany, Pakistan).</p>
+    </div>
+
+    <!-- Contact & social proof -->
+    <div class="section-title" style="margin-top: 30px;"><i class="fas fa-paper-plane"></i> Let’s build something remarkable</div>
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px; background: #0f131e; border-radius: 48px; padding: 28px 32px;">
+      <div>
+        <i class="fab fa-fiverr fa-2x" style="color: #1fbf73;"></i>
+        <p style="font-weight: 600;">Available for Shopify customizations & full‑stack frontend</p>
+        <a href="https://www.fiverr.com/s/BR4QEdb" style="color: #2dd4bf;">Fiverr gig ↗</a>
+      </div>
+      <div>
+        <i class="fas fa-envelope fa-2x"></i>
+        <p>ahadmughal458@gmail.com</p>
+      </div>
+      <div>
+        <i class="fab fa-linkedin"></i>
+        <p>LinkedIn / Abdul Aahad (request via github)</p>
+      </div>
+    </div>
+    <footer>
+      <p>⚡ Designed & coded by Abdul Aahad — dynamic portfolio, always evolving. <br> © 2026 • Shopify • Frontend • Liquid • JS</p>
+      <div style="margin-top: 12px;">
+        <a href="https://github.com/ahadmughal458" style="color:#9aa9c1; margin:0 8px;">GitHub</a>
+        <a href="https://codecreatify.com" style="color:#9aa9c1; margin:0 8px;">CodeCreatify</a>
+      </div>
+    </footer>
+  </div>
+  <!-- simple interactive console style (just for fun) -->
+  <script>
+    // small dynamic year
+    document.querySelector('footer p').innerHTML = document.querySelector('footer p').innerHTML.replace('2026', new Date().getFullYear());
+  </script>
+</body>
+</html>
