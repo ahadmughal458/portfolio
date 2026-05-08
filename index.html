@@ -21,6 +21,40 @@
       scroll-behavior: smooth;
     }
 
+    /* OVERLAY STYLES */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #0a0c10; /* fallback dark bg */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.8s ease-in-out;
+      opacity: 1;
+    }
+
+    .overlay img {
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+      animation: subtlePulse 1.2s ease-in-out infinite alternate;
+    }
+
+    @keyframes subtlePulse {
+      0% { transform: scale(0.98); opacity: 0.9; }
+      100% { transform: scale(1.02); opacity: 1; }
+    }
+
+    .overlay.fade-out {
+      opacity: 0;
+      pointer-events: none; /* allow clicking through when fading */
+    }
+
+    /* main content initially visible but under overlay */
     .container {
       max-width: 1300px;
       margin: 0 auto;
@@ -33,13 +67,6 @@
       border-radius: 32px;
       border: 1px solid rgba(0, 255, 255, 0.15);
       transition: 0.25s ease;
-    }
-
-    .neon-text {
-      background: linear-gradient(135deg, #aaffff, #2b9eff);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
     }
 
     .btn {
@@ -163,7 +190,6 @@
       font-size: 0.85rem;
     }
 
-    /* profile pic style (optional - add later) */
     .profile-pic {
       width: 120px;
       height: 120px;
@@ -175,115 +201,136 @@
   </style>
 </head>
 <body>
-  <div class="container">
-    <!-- Hero Section -->
-    <div class="hero">
-      <div class="badge-stat">
-        <i class="fas fa-code"></i> 3+ years · Shopify custom theme dev
-      </div>
-      <!-- optional profile picture: uncomment the line below and add your image file (e.g., profile.jpg) to repo -->
-      <!-- <img src="profile.jpg" alt="Abdul Aahad" class="profile-pic" style="margin: 16px 0;"> -->
-      <h1 style="font-size: 4rem; font-weight: 800; margin: 20px 0 12px;">Abdul Aahad <span style="color:#2dd4bf;">✦</span></h1>
-      <p style="font-size: 1.6rem; font-weight: 500; color: #cbd5e6;">Web Developer · Shopify Expert · UI/UX focused</p>
-      <div style="display: flex; flex-wrap: wrap; gap: 14px; margin: 30px 0 16px;">
-        <span class="skill-tag"><i class="fab fa-html5"></i> HTML5</span>
-        <span class="skill-tag"><i class="fab fa-css3-alt"></i> CSS3</span>
-        <span class="skill-tag"><i class="fab fa-js"></i> JavaScript</span>
-        <span class="skill-tag"><i class="fab fa-shopify"></i> Liquid</span>
-        <span class="skill-tag"><i class="fab fa-python"></i> Python (Basic)</span>
-        <span class="skill-tag"><i class="fas fa-mobile-alt"></i> Responsive Expert</span>
-      </div>
-      <p style="max-width: 680px; font-size: 1.05rem; color: #b0c4de; margin-top: 12px;">
-        I build high‑conversion, responsive Shopify stores and custom frontend experiences. 
-        Onsite Shopify Theme Developer with 3+ years freelance & agency projects. 
-        I turn designs into pixel‑perfect, blazing‑fast e‑commerce stores.
-      </p>
-      <div style="display: flex; gap: 18px; flex-wrap: wrap; margin-top: 32px;">
-        <a href="https://github.com/ahadmughal458" target="_blank" class="btn"><i class="fab fa-github"></i> GitHub</a>
-        <!-- WhatsApp instead of Fiverr -->
-        <a href="https://wa.me/923124419363" target="_blank" class="btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-        <a href="mailto:ahadmughal458@gmail.com" class="btn"><i class="far fa-envelope"></i> Email me</a>
-      </div>
-    </div>
 
-    <!-- Live Projects -->
-    <div>
-      <div class="section-title">
-        <i class="fas fa-store"></i> Live stores & custom work
-      </div>
-      <div class="project-grid">
-        <div class="project-card"><div class="project-icon"><i class="fas fa-crown"></i></div><div class="project-title">Comodo Living</div><div style="margin: 10px 0; color:#9aa9c1;">Shopify custom theme, responsive UI, product filtering</div><div class="project-links"><a href="https://www.comodoliving.co.uk/" target="_blank"><i class="fas fa-external-link-alt"></i> Live demo</a></div></div>
-        <div class="project-card"><div class="project-icon"><i class="fas fa-leaf"></i></div><div class="project-title">Anboise</div><div>Elegant skincare store • Liquid modifications • cart drawer</div><div class="project-links"><a href="https://www.anboise.com/" target="_blank"><i class="fas fa-external-link-alt"></i> Visit site</a></div></div>
-        <div class="project-card"><div class="project-icon"><i class="fas fa-snowboarding"></i></div><div class="project-title">Alyaskin</div><div>Beauty niche, fully responsive + AJAX add to cart</div><div class="project-links"><a href="https://alyaskin.com.au/" target="_blank"><i class="fas fa-external-link-alt"></i> View</a></div></div>
-        <div class="project-card"><div class="project-icon"><i class="fas fa-shopping-cart"></i></div><div class="project-title">MyTrolley.pk</div><div>Pakistan grocery delivery – custom sections & speed opt.</div><div class="project-links"><a href="https://mytrolley.pk/" target="_blank"><i class="fas fa-external-link-alt"></i> Check</a></div></div>
-        <div class="project-card"><div class="project-icon"><i class="fas fa-gem"></i></div><div class="project-title">Amethyst Store</div><div>Jewelry brand, smooth animations, SEO friendly</div><div class="project-links"><a href="https://www.theamethyststore.com/" target="_blank"><i class="fas fa-external-link-alt"></i> Live</a></div></div>
-        <div class="project-card"><div class="project-icon"><i class="fas fa-bed"></i></div><div class="project-title">Snoozy Labs</div><div>Sleep products – mega menu, custom PDP tabs</div><div class="project-links"><a href="https://snoozylabs.com/" target="_blank"><i class="fas fa-external-link-alt"></i> Explore</a></div></div>
-        <div class="project-card"><div class="project-icon"><i class="fas fa-globe-europe"></i></div><div class="project-title">da‑meso.de</div><div>German brand, multi‑language support & speed optimization</div><div class="project-links"><a href="https://da-meso.de/" target="_blank"><i class="fas fa-external-link-alt"></i> See project</a></div></div>
-        <div class="project-card"><div class="project-icon"><i class="fas fa-palette"></i></div><div class="project-title">My Beauty Pantry</div><div>Natural cosmetics, dynamic product bundles</div><div class="project-links"><a href="https://mybeautypantry.com.au/" target="_blank"><i class="fas fa-external-link-alt"></i> Visit</a></div></div>
-        <div class="project-card"><div class="project-icon"><i class="fas fa-oven"></i></div><div class="project-title">Ovenly Baked</div><div>Bakery store – custom theme & checkout styling</div><div class="project-links"><a href="https://ovenlybaked.com/" target="_blank"><i class="fas fa-external-link-alt"></i> Preview</a></div></div>
-      </div>
-    </div>
+<!-- OVERLAY (shows overlay.png for 3 seconds then fades) -->
+<div id="splashOverlay" class="overlay">
+  <img src="overlay.png" alt="Abdul Aahad intro">
+</div>
 
-    <!-- GitHub + Experience -->
-    <div style="display: flex; flex-wrap: wrap; gap: 30px; margin-top: 40px; justify-content: space-between;">
-      <div class="glass-card" style="flex: 1.5; padding: 28px; border-radius: 28px;">
-        <h3 style="font-size: 1.8rem; display: flex; gap: 14px;"><i class="fab fa-github"></i> GitHub pulse</h3>
-        <p style="margin-top: 12px;"><strong>ahadmughal458</strong> · 7 repos · 76+ contributions (last year)</p>
-        <div style="display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0;">
-          <span class="skill-tag"><i class="fas fa-trophy"></i> Pull Shark</span>
-          <span class="skill-tag"><i class="fas fa-bolt"></i> Quickdraw</span>
-        </div>
-        <p>Featured repos: <strong>portfolio</strong> (HTML), <strong>my-crm</strong>, <strong>Matrix‑Chat‑Project</strong> – full‑stack experiments.</p>
-        <a href="https://github.com/ahadmughal458" style="margin-top: 20px; display: inline-block;" class="btn"><i class="fab fa-github"></i> see all activity</a>
-      </div>
-      <div class="glass-card" style="flex: 1; padding: 28px; border-radius: 28px;">
-        <h3><i class="fas fa-briefcase"></i> Onsite & freelance</h3>
-        <ul style="margin-top: 15px; list-style: none;">
-          <li style="margin-bottom: 15px;">✔ <strong>Shopify custom theme dev</strong> – from scratch & theme customization</li>
-          <li style="margin-bottom: 15px;">✔ <strong>Frontend expert</strong> – responsive & interactive UIs (HTML/CSS/JS)</li>
-          <li style="margin-bottom: 15px;">✔ <strong>Liquid & Shopify 2.0</strong> – metafields, app integrations, checkout</li>
-          <li>✔ <strong>Performance & SEO</strong> – 90+ lighthouse scores for e‑commerce</li>
-        </ul>
-      </div>
+<div class="container">
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="badge-stat">
+      <i class="fas fa-code"></i> 3+ years · Shopify custom theme dev
     </div>
-
-    <!-- CLI-style creative block -->
-    <div style="margin-top: 64px; background: #05080f; border-radius: 36px; padding: 28px; border: 1px solid #1e2f3f; font-family: monospace;">
-      <p style="color: #2dd4bf;">$ whoami</p>
-      <p style="font-size: 1.2rem;">Abdul Aahad > Shopify Partner & Creative Developer. “Pixel perfect, fluid experiences.”</p>
-      <p style="margin-top: 12px; color: #8d9fcf;">$ skills --proven</p>
-      <p>→ Liquid, JS, CSS Grid/Flex, Figma to HTML, theme customization, version control (Git).</p>
-      <p style="margin-top: 12px; color: #2dd4bf;">$ projects --live | wc -l</p>
-      <p>▸ 9+ production stores launched for international brands (UK, Australia, Germany, Pakistan).</p>
+    <!-- optional profile picture: uncomment below and add profile.jpg -->
+    <!-- <img src="profile.jpg" alt="Abdul Aahad" class="profile-pic" style="margin: 16px 0;"> -->
+    <h1 style="font-size: 4rem; font-weight: 800; margin: 20px 0 12px;">Abdul Aahad <span style="color:#2dd4bf;">✦</span></h1>
+    <p style="font-size: 1.6rem; font-weight: 500; color: #cbd5e6;">Web Developer · Shopify Expert · UI/UX focused</p>
+    <div style="display: flex; flex-wrap: wrap; gap: 14px; margin: 30px 0 16px;">
+      <span class="skill-tag"><i class="fab fa-html5"></i> HTML5</span>
+      <span class="skill-tag"><i class="fab fa-css3-alt"></i> CSS3</span>
+      <span class="skill-tag"><i class="fab fa-js"></i> JavaScript</span>
+      <span class="skill-tag"><i class="fab fa-shopify"></i> Liquid</span>
+      <span class="skill-tag"><i class="fab fa-python"></i> Python (Basic)</span>
+      <span class="skill-tag"><i class="fas fa-mobile-alt"></i> Responsive Expert</span>
     </div>
-
-    <!-- Contact - WhatsApp, Email -->
-    <div class="section-title" style="margin-top: 30px;"><i class="fas fa-paper-plane"></i> Let’s build something remarkable</div>
-    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px; background: #0f131e; border-radius: 48px; padding: 28px 32px;">
-      <div>
-        <i class="fab fa-whatsapp fa-2x" style="color: #25D366;"></i>
-        <p style="font-weight: 600;">Chat on WhatsApp – quick replies</p>
-        <a href="https://wa.me/923124419363" style="color: #2dd4bf;">+92 312 4419363 ↗</a>
-      </div>
-      <div>
-        <i class="fas fa-envelope fa-2x"></i>
-        <p>ahadmughal458@gmail.com</p>
-      </div>
-      <div>
-        <i class="fab fa-github fa-2x"></i>
-        <p>github.com/ahadmughal458</p>
-      </div>
+    <p style="max-width: 680px; font-size: 1.05rem; color: #b0c4de; margin-top: 12px;">
+      I build high‑conversion, responsive Shopify stores and custom frontend experiences. 
+      Onsite Shopify Theme Developer with 3+ years freelance & agency projects. 
+      I turn designs into pixel‑perfect, blazing‑fast e‑commerce stores.
+    </p>
+    <div style="display: flex; gap: 18px; flex-wrap: wrap; margin-top: 32px;">
+      <a href="https://github.com/ahadmughal458" target="_blank" class="btn"><i class="fab fa-github"></i> GitHub</a>
+      <a href="https://wa.me/923124419363" target="_blank" class="btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      <a href="mailto:ahadmughal458@gmail.com" class="btn"><i class="far fa-envelope"></i> Email me</a>
     </div>
-    <footer>
-      <p>⚡ Designed & coded by Abdul Aahad — dynamic portfolio, always evolving. <br> © 2026 • Shopify • Frontend • Liquid • JS</p>
-      <div style="margin-top: 12px;">
-        <a href="https://github.com/ahadmughal458" style="color:#9aa9c1; margin:0 8px;">GitHub</a>
-        <a href="#" style="color:#9aa9c1; margin:0 8px;">WhatsApp: +923124419363</a>
-      </div>
-    </footer>
   </div>
-  <script>
-    document.querySelector('footer p').innerHTML = document.querySelector('footer p').innerHTML.replace('2026', new Date().getFullYear());
-  </script>
+
+  <!-- Live Projects -->
+  <div>
+    <div class="section-title">
+      <i class="fas fa-store"></i> Live stores & custom work
+    </div>
+    <div class="project-grid">
+      <div class="project-card"><div class="project-icon"><i class="fas fa-crown"></i></div><div class="project-title">Comodo Living</div><div style="margin: 10px 0; color:#9aa9c1;">Shopify custom theme, responsive UI, product filtering</div><div class="project-links"><a href="https://www.comodoliving.co.uk/" target="_blank"><i class="fas fa-external-link-alt"></i> Live demo</a></div></div>
+      <div class="project-card"><div class="project-icon"><i class="fas fa-leaf"></i></div><div class="project-title">Anboise</div><div>Elegant skincare store • Liquid modifications • cart drawer</div><div class="project-links"><a href="https://www.anboise.com/" target="_blank"><i class="fas fa-external-link-alt"></i> Visit site</a></div></div>
+      <div class="project-card"><div class="project-icon"><i class="fas fa-snowboarding"></i></div><div class="project-title">Alyaskin</div><div>Beauty niche, fully responsive + AJAX add to cart</div><div class="project-links"><a href="https://alyaskin.com.au/" target="_blank"><i class="fas fa-external-link-alt"></i> View</a></div></div>
+      <div class="project-card"><div class="project-icon"><i class="fas fa-shopping-cart"></i></div><div class="project-title">MyTrolley.pk</div><div>Pakistan grocery delivery – custom sections & speed opt.</div><div class="project-links"><a href="https://mytrolley.pk/" target="_blank"><i class="fas fa-external-link-alt"></i> Check</a></div></div>
+      <div class="project-card"><div class="project-icon"><i class="fas fa-gem"></i></div><div class="project-title">Amethyst Store</div><div>Jewelry brand, smooth animations, SEO friendly</div><div class="project-links"><a href="https://www.theamethyststore.com/" target="_blank"><i class="fas fa-external-link-alt"></i> Live</a></div></div>
+      <div class="project-card"><div class="project-icon"><i class="fas fa-bed"></i></div><div class="project-title">Snoozy Labs</div><div>Sleep products – mega menu, custom PDP tabs</div><div class="project-links"><a href="https://snoozylabs.com/" target="_blank"><i class="fas fa-external-link-alt"></i> Explore</a></div></div>
+      <div class="project-card"><div class="project-icon"><i class="fas fa-globe-europe"></i></div><div class="project-title">da‑meso.de</div><div>German brand, multi‑language support & speed optimization</div><div class="project-links"><a href="https://da-meso.de/" target="_blank"><i class="fas fa-external-link-alt"></i> See project</a></div></div>
+      <div class="project-card"><div class="project-icon"><i class="fas fa-palette"></i></div><div class="project-title">My Beauty Pantry</div><div>Natural cosmetics, dynamic product bundles</div><div class="project-links"><a href="https://mybeautypantry.com.au/" target="_blank"><i class="fas fa-external-link-alt"></i> Visit</a></div></div>
+      <div class="project-card"><div class="project-icon"><i class="fas fa-oven"></i></div><div class="project-title">Ovenly Baked</div><div>Bakery store – custom theme & checkout styling</div><div class="project-links"><a href="https://ovenlybaked.com/" target="_blank"><i class="fas fa-external-link-alt"></i> Preview</a></div></div>
+    </div>
+  </div>
+
+  <!-- GitHub + Experience -->
+  <div style="display: flex; flex-wrap: wrap; gap: 30px; margin-top: 40px; justify-content: space-between;">
+    <div class="glass-card" style="flex: 1.5; padding: 28px; border-radius: 28px;">
+      <h3 style="font-size: 1.8rem; display: flex; gap: 14px;"><i class="fab fa-github"></i> GitHub pulse</h3>
+      <p style="margin-top: 12px;"><strong>ahadmughal458</strong> · 7 repos · 76+ contributions (last year)</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0;">
+        <span class="skill-tag"><i class="fas fa-trophy"></i> Pull Shark</span>
+        <span class="skill-tag"><i class="fas fa-bolt"></i> Quickdraw</span>
+      </div>
+      <p>Featured repos: <strong>portfolio</strong> (HTML), <strong>my-crm</strong>, <strong>Matrix‑Chat‑Project</strong> – full‑stack experiments.</p>
+      <a href="https://github.com/ahadmughal458" style="margin-top: 20px; display: inline-block;" class="btn"><i class="fab fa-github"></i> see all activity</a>
+    </div>
+    <div class="glass-card" style="flex: 1; padding: 28px; border-radius: 28px;">
+      <h3><i class="fas fa-briefcase"></i> Onsite & freelance</h3>
+      <ul style="margin-top: 15px; list-style: none;">
+        <li style="margin-bottom: 15px;">✔ <strong>Shopify custom theme dev</strong> – from scratch & theme customization</li>
+        <li style="margin-bottom: 15px;">✔ <strong>Frontend expert</strong> – responsive & interactive UIs (HTML/CSS/JS)</li>
+        <li style="margin-bottom: 15px;">✔ <strong>Liquid & Shopify 2.0</strong> – metafields, app integrations, checkout</li>
+        <li>✔ <strong>Performance & SEO</strong> – 90+ lighthouse scores for e‑commerce</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CLI-style creative block -->
+  <div style="margin-top: 64px; background: #05080f; border-radius: 36px; padding: 28px; border: 1px solid #1e2f3f; font-family: monospace;">
+    <p style="color: #2dd4bf;">$ whoami</p>
+    <p style="font-size: 1.2rem;">Abdul Aahad > Shopify Partner & Creative Developer. “Pixel perfect, fluid experiences.”</p>
+    <p style="margin-top: 12px; color: #8d9fcf;">$ skills --proven</p>
+    <p>→ Liquid, JS, CSS Grid/Flex, Figma to HTML, theme customization, version control (Git).</p>
+    <p style="margin-top: 12px; color: #2dd4bf;">$ projects --live | wc -l</p>
+    <p>▸ 9+ production stores launched for international brands (UK, Australia, Germany, Pakistan).</p>
+  </div>
+
+  <!-- Contact section -->
+  <div class="section-title" style="margin-top: 30px;"><i class="fas fa-paper-plane"></i> Let’s build something remarkable</div>
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px; background: #0f131e; border-radius: 48px; padding: 28px 32px;">
+    <div>
+      <i class="fab fa-whatsapp fa-2x" style="color: #25D366;"></i>
+      <p style="font-weight: 600;">Chat on WhatsApp – quick replies</p>
+      <a href="https://wa.me/923124419363" style="color: #2dd4bf;">+92 312 4419363 ↗</a>
+    </div>
+    <div>
+      <i class="fas fa-envelope fa-2x"></i>
+      <p>ahadmughal458@gmail.com</p>
+    </div>
+    <div>
+      <i class="fab fa-github fa-2x"></i>
+      <p>github.com/ahadmughal458</p>
+    </div>
+  </div>
+  <footer>
+    <p>⚡ Designed & coded by Abdul Aahad — dynamic portfolio, always evolving. <br> © 2026 • Shopify • Frontend • Liquid • JS</p>
+    <div style="margin-top: 12px;">
+      <a href="https://github.com/ahadmughal458" style="color:#9aa9c1; margin:0 8px;">GitHub</a>
+      <a href="#" style="color:#9aa9c1; margin:0 8px;">WhatsApp: +923124419363</a>
+    </div>
+  </footer>
+</div>
+
+<script>
+  // Overlay fade out after 3 seconds
+  window.addEventListener('load', function() {
+    const overlay = document.getElementById('splashOverlay');
+    if (overlay) {
+      setTimeout(function() {
+        overlay.classList.add('fade-out');
+        // remove overlay from DOM after transition ends to allow interaction
+        overlay.addEventListener('transitionend', function() {
+          overlay.style.display = 'none';
+        });
+      }, 3000); // 3 seconds
+    }
+  });
+
+  // update copyright year
+  document.querySelector('footer p').innerHTML = document.querySelector('footer p').innerHTML.replace('2026', new Date().getFullYear());
+</script>
 </body>
 </html>
