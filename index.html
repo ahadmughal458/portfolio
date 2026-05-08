@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
   <title>Abdul Aahad · Shopify Developer & Frontend Expert</title>
-  <!-- Google Fonts + Font Awesome -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
@@ -28,7 +27,6 @@
       padding: 0 24px;
     }
 
-    /* glows & glass */
     .glass-card {
       background: rgba(18, 22, 30, 0.7);
       backdrop-filter: blur(12px);
@@ -67,7 +65,6 @@
       transform: translateY(-2px);
     }
 
-    /* project grid */
     .project-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
@@ -83,7 +80,6 @@
       transition: 0.2s all;
       display: flex;
       flex-direction: column;
-      backdrop-filter: blur(2px);
     }
 
     .project-card:hover {
@@ -126,7 +122,6 @@
       color: #2dd4bf;
     }
 
-    /* skill tag */
     .skill-tag {
       background: #1e2433;
       padding: 5px 14px;
@@ -167,6 +162,16 @@
       border-top: 1px solid #1e2a3a;
       font-size: 0.85rem;
     }
+
+    /* profile pic style (optional - add later) */
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #2dd4bf;
+      box-shadow: 0 0 15px #2dd4bf40;
+    }
   </style>
 </head>
 <body>
@@ -176,6 +181,8 @@
       <div class="badge-stat">
         <i class="fas fa-code"></i> 3+ years · Shopify custom theme dev
       </div>
+      <!-- optional profile picture: uncomment the line below and add your image file (e.g., profile.jpg) to repo -->
+      <!-- <img src="profile.jpg" alt="Abdul Aahad" class="profile-pic" style="margin: 16px 0;"> -->
       <h1 style="font-size: 4rem; font-weight: 800; margin: 20px 0 12px;">Abdul Aahad <span style="color:#2dd4bf;">✦</span></h1>
       <p style="font-size: 1.6rem; font-weight: 500; color: #cbd5e6;">Web Developer · Shopify Expert · UI/UX focused</p>
       <div style="display: flex; flex-wrap: wrap; gap: 14px; margin: 30px 0 16px;">
@@ -193,18 +200,18 @@
       </p>
       <div style="display: flex; gap: 18px; flex-wrap: wrap; margin-top: 32px;">
         <a href="https://github.com/ahadmughal458" target="_blank" class="btn"><i class="fab fa-github"></i> GitHub</a>
-        <a href="https://www.fiverr.com/s/BR4QEdb" target="_blank" class="btn"><i class="fas fa-star"></i> Fiverr</a>
+        <!-- WhatsApp instead of Fiverr -->
+        <a href="https://wa.me/923124419363" target="_blank" class="btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
         <a href="mailto:ahadmughal458@gmail.com" class="btn"><i class="far fa-envelope"></i> Email me</a>
       </div>
     </div>
 
-    <!-- Live Projects (e‑commerce stores) -->
+    <!-- Live Projects -->
     <div>
       <div class="section-title">
         <i class="fas fa-store"></i> Live stores & custom work
       </div>
       <div class="project-grid">
-        <!-- each store from the list -->
         <div class="project-card"><div class="project-icon"><i class="fas fa-crown"></i></div><div class="project-title">Comodo Living</div><div style="margin: 10px 0; color:#9aa9c1;">Shopify custom theme, responsive UI, product filtering</div><div class="project-links"><a href="https://www.comodoliving.co.uk/" target="_blank"><i class="fas fa-external-link-alt"></i> Live demo</a></div></div>
         <div class="project-card"><div class="project-icon"><i class="fas fa-leaf"></i></div><div class="project-title">Anboise</div><div>Elegant skincare store • Liquid modifications • cart drawer</div><div class="project-links"><a href="https://www.anboise.com/" target="_blank"><i class="fas fa-external-link-alt"></i> Visit site</a></div></div>
         <div class="project-card"><div class="project-icon"><i class="fas fa-snowboarding"></i></div><div class="project-title">Alyaskin</div><div>Beauty niche, fully responsive + AJAX add to cart</div><div class="project-links"><a href="https://alyaskin.com.au/" target="_blank"><i class="fas fa-external-link-alt"></i> View</a></div></div>
@@ -217,7 +224,7 @@
       </div>
     </div>
 
-    <!-- GitHub Contribution + Experience deep -->
+    <!-- GitHub + Experience -->
     <div style="display: flex; flex-wrap: wrap; gap: 30px; margin-top: 40px; justify-content: space-between;">
       <div class="glass-card" style="flex: 1.5; padding: 28px; border-radius: 28px;">
         <h3 style="font-size: 1.8rem; display: flex; gap: 14px;"><i class="fab fa-github"></i> GitHub pulse</h3>
@@ -240,7 +247,7 @@
       </div>
     </div>
 
-    <!-- extra unique creative area: CLI-like intro -->
+    <!-- CLI-style creative block -->
     <div style="margin-top: 64px; background: #05080f; border-radius: 36px; padding: 28px; border: 1px solid #1e2f3f; font-family: monospace;">
       <p style="color: #2dd4bf;">$ whoami</p>
       <p style="font-size: 1.2rem;">Abdul Aahad > Shopify Partner & Creative Developer. “Pixel perfect, fluid experiences.”</p>
@@ -250,34 +257,32 @@
       <p>▸ 9+ production stores launched for international brands (UK, Australia, Germany, Pakistan).</p>
     </div>
 
-    <!-- Contact & social proof -->
+    <!-- Contact - WhatsApp, Email -->
     <div class="section-title" style="margin-top: 30px;"><i class="fas fa-paper-plane"></i> Let’s build something remarkable</div>
     <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px; background: #0f131e; border-radius: 48px; padding: 28px 32px;">
       <div>
-        <i class="fab fa-fiverr fa-2x" style="color: #1fbf73;"></i>
-        <p style="font-weight: 600;">Available for Shopify customizations & full‑stack frontend</p>
-        <a href="https://www.fiverr.com/s/BR4QEdb" style="color: #2dd4bf;">Fiverr gig ↗</a>
+        <i class="fab fa-whatsapp fa-2x" style="color: #25D366;"></i>
+        <p style="font-weight: 600;">Chat on WhatsApp – quick replies</p>
+        <a href="https://wa.me/923124419363" style="color: #2dd4bf;">+92 312 4419363 ↗</a>
       </div>
       <div>
         <i class="fas fa-envelope fa-2x"></i>
         <p>ahadmughal458@gmail.com</p>
       </div>
       <div>
-        <i class="fab fa-linkedin"></i>
-        <p>LinkedIn / Abdul Aahad (request via github)</p>
+        <i class="fab fa-github fa-2x"></i>
+        <p>github.com/ahadmughal458</p>
       </div>
     </div>
     <footer>
       <p>⚡ Designed & coded by Abdul Aahad — dynamic portfolio, always evolving. <br> © 2026 • Shopify • Frontend • Liquid • JS</p>
       <div style="margin-top: 12px;">
         <a href="https://github.com/ahadmughal458" style="color:#9aa9c1; margin:0 8px;">GitHub</a>
-        <a href="https://codecreatify.com" style="color:#9aa9c1; margin:0 8px;">CodeCreatify</a>
+        <a href="#" style="color:#9aa9c1; margin:0 8px;">WhatsApp: +923124419363</a>
       </div>
     </footer>
   </div>
-  <!-- simple interactive console style (just for fun) -->
   <script>
-    // small dynamic year
     document.querySelector('footer p').innerHTML = document.querySelector('footer p').innerHTML.replace('2026', new Date().getFullYear());
   </script>
 </body>
