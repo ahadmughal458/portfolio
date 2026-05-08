@@ -21,14 +21,14 @@
       scroll-behavior: smooth;
     }
 
-    /* OVERLAY STYLES */
+    /* OVERLAY - full screen, no animation */
     .overlay {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: #0a0c10; /* fallback dark bg */
+      background: #0a0c10;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -38,23 +38,16 @@
     }
 
     .overlay img {
-      max-width: 90%;
-      max-height: 90%;
-      object-fit: contain;
-      animation: subtlePulse 1.2s ease-in-out infinite alternate;
-    }
-
-    @keyframes subtlePulse {
-      0% { transform: scale(0.98); opacity: 0.9; }
-      100% { transform: scale(1.02); opacity: 1; }
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .overlay.fade-out {
       opacity: 0;
-      pointer-events: none; /* allow clicking through when fading */
+      pointer-events: none;
     }
 
-    /* main content initially visible but under overlay */
     .container {
       max-width: 1300px;
       margin: 0 auto;
@@ -202,9 +195,9 @@
 </head>
 <body>
 
-<!-- OVERLAY (shows overlay.png for 3 seconds then fades) -->
+<!-- OVERLAY: full screen, no animation, fades after 3s -->
 <div id="splashOverlay" class="overlay">
-  <img src="overlay.png" alt="Abdul Aahad intro">
+  <img src="overlay.png" alt="Full screen intro">
 </div>
 
 <div class="container">
@@ -213,7 +206,7 @@
     <div class="badge-stat">
       <i class="fas fa-code"></i> 3+ years · Shopify custom theme dev
     </div>
-    <!-- optional profile picture: uncomment below and add profile.jpg -->
+    <!-- optional profile picture -->
     <!-- <img src="profile.jpg" alt="Abdul Aahad" class="profile-pic" style="margin: 16px 0;"> -->
     <h1 style="font-size: 4rem; font-weight: 800; margin: 20px 0 12px;">Abdul Aahad <span style="color:#2dd4bf;">✦</span></h1>
     <p style="font-size: 1.6rem; font-weight: 500; color: #cbd5e6;">Web Developer · Shopify Expert · UI/UX focused</p>
@@ -315,21 +308,17 @@
 </div>
 
 <script>
-  // Overlay fade out after 3 seconds
   window.addEventListener('load', function() {
     const overlay = document.getElementById('splashOverlay');
     if (overlay) {
       setTimeout(function() {
         overlay.classList.add('fade-out');
-        // remove overlay from DOM after transition ends to allow interaction
         overlay.addEventListener('transitionend', function() {
           overlay.style.display = 'none';
         });
-      }, 3000); // 3 seconds
+      }, 3000);
     }
   });
-
-  // update copyright year
   document.querySelector('footer p').innerHTML = document.querySelector('footer p').innerHTML.replace('2026', new Date().getFullYear());
 </script>
 </body>
