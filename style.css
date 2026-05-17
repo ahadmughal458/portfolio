@@ -154,7 +154,7 @@ footer {
   font-size: 0.85rem;
 }
 
-/* profile pic style (optional - add later) */
+/* profile pic style */
 .profile-pic {
   width: 120px;
   height: 120px;
@@ -162,4 +162,11 @@ footer {
   object-fit: cover;
   border: 2px solid #2dd4bf;
   box-shadow: 0 0 15px #2dd4bf40;
+}
+
+/* Hide on mobile and tablet */
+@media (max-width: 787px) {
+  .profile-pic {
+    display: none;
+  }
 }
