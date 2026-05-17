@@ -167,5 +167,5 @@ footer {
 /* Hide on mobile and tablet */
 @media (max-width: 787px) {
   .profile-pic {
-    display: none;
+    display: none !important;
   }}
