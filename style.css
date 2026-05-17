@@ -162,6 +162,7 @@ footer {
   object-fit: cover;
   border: 2px solid #2dd4bf;
   box-shadow: 0 0 15px #2dd4bf40;
+  display: none !important;
 }
 
 /* Hide on mobile and tablet */
